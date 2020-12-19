@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import Indonesia from './Indonesia'
+import Provinsi from './component/Provinsi'
 
 test('renders learn react link', () => {
   render(<App />);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Home from './Home';
 import Axios from "axios";
 import { Container, Col, Row, Button } from 'react-bootstrap';
@@ -41,7 +41,7 @@ export default function Indonesia(){
   const [upSembuh, setUpSembuh] = useState(0);
   const [upMeniggal, setUpMeninggal] = useState(0);
   const [upRawat, setUpRawat] = useState(0);
-  const [lastUpdate, setLastUpdate] = useState("");
+  const [lastUpdate, setLastUpdate] = useState('');
 
   useEffect(() => {
       Axios.get("https://apicovid19indonesia-v2.vercel.app/api/indonesia/more").then((res) => {
@@ -110,12 +110,14 @@ export default function Indonesia(){
           </LineChart>
         </ResponsiveContainer>
         <Provinsi/>
+        <Router>
         <Link to="/"><Button><FontAwesomeIcon icon={["fas", "angle-left"]}/> Back To Home</Button></Link>
         <Switch>
           <Route exact path="/">
             <Home/>
           </Route>
         </Switch>
+        </Router>
       </Container>
     );
   }
