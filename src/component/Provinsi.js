@@ -16,7 +16,7 @@ export default function Provinsi(){
     const [provinsi, setProvinsi] = useState('');
 
     useEffect(() => {
-        Axios.get("http://apicovid19indonesia-v2.vercel.app/api/indonesia/provinsi").then((res) => {
+        Axios.get("https://apicovid19indonesia-v2.vercel.app/api/indonesia/provinsi").then((res) => {
             setProv(res.data)
         });
         if(pilih !== ''){
